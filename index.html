@@ -3,42 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ゼロクリックQR</title>
+<title>TAOVERTEX | Zero Click QR</title>
+<!-- TAOVERTEX original-logo build: no recoloring, no background removal -->
 <style>
-:root{--bg:#f5f7fb;--card:#fff;--ink:#15171c;--muted:#69707d;--line:#e7eaf0;--accent:#6c5ce7;--ok:#0f9d72;--shadow:0 18px 55px rgba(28,34,48,.12)}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;background:radial-gradient(circle at 20% 0,#ece9ff 0,transparent 34%),var(--bg);color:var(--ink)}
-main{width:min(960px,calc(100% - 28px));margin:0 auto;padding:42px 0 56px}
-.hero{text-align:center;margin-bottom:24px}.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.03;margin:16px 0 10px;letter-spacing:-.04em}.hero p{margin:0;color:var(--muted);font-size:15px}
-.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.card{background:rgba(255,255,255,.9);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);border-radius:28px;box-shadow:var(--shadow);padding:22px}
-.label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:800}.type{color:var(--accent);background:#f0edff;padding:6px 10px;border-radius:999px}
-textarea{width:100%;min-height:250px;resize:vertical;border:1.5px solid var(--line);border-radius:20px;padding:18px;font:inherit;font-size:16px;line-height:1.7;outline:none;background:#fbfcfe;transition:.2s}textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(108,92,231,.1)}
-.hint{color:var(--muted);font-size:12px;margin-top:10px;line-height:1.6}.examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-size:12px;cursor:pointer}.chip:hover{border-color:var(--accent);color:var(--accent)}
-.qrside{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:370px}.qrwrap{width:260px;height:260px;background:#fff;border-radius:25px;display:grid;place-items:center;border:1px solid var(--line);position:relative;overflow:hidden}.placeholder{text-align:center;color:var(--muted);padding:30px;font-size:14px}.placeholder b{display:block;color:var(--ink);font-size:30px;margin-bottom:10px}.qrcode img{display:block!important;width:220px!important;height:220px!important;object-fit:contain;-webkit-touch-callout:default;user-select:auto}.qrcode{cursor:zoom-in}
-.savehint{margin-top:14px;color:var(--muted);font-size:13px;font-weight:700;text-align:center;line-height:1.6}.actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%;margin-top:14px}.btn{border:0;border-radius:16px;padding:13px 14px;font-weight:800;font-size:14px;cursor:pointer}.primary{background:var(--ink);color:#fff}.btn:disabled{opacity:.4;cursor:not-allowed}
-.status{min-height:22px;margin-top:12px;font-size:12px;color:var(--ok);font-weight:700;text-align:center}.privacy{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
-.modal{position:fixed;inset:0;z-index:1000;background:rgba(10,12,18,.88);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{width:min(92vw,560px);background:#fff;border-radius:28px;padding:22px;text-align:center;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:900}.close{border:0;background:#eef0f5;width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer}.modalimg{width:min(78vw,460px);height:auto;max-height:65vh;object-fit:contain;-webkit-touch-callout:default;user-select:auto}.modalnote{margin:12px 0 0;color:var(--muted);font-size:13px;font-weight:700}.detected{margin-top:8px;color:var(--accent);font-size:12px;font-weight:800}
-@media(max-width:760px){main{padding-top:26px}.grid{grid-template-columns:1fr}.card{border-radius:23px}.qrside{min-height:auto}.qrwrap{width:240px;height:240px}textarea{min-height:180px}}
+
+:root{--bg:#000000;--panel:#080b12;--panel2:#0b1019;--ink:#f7f8ff;--muted:#8993a5;--line:#172033;--blue:#00b8ff;--purple:#8d28ff;--ok:#24d58b;--glow:0 0 28px rgba(0,184,255,.13)}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;color:var(--ink);background:radial-gradient(circle at 50% -10%,rgba(60,0,255,.14),transparent 32%),radial-gradient(circle at 100% 35%,rgba(0,184,255,.07),transparent 28%),var(--bg)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.01) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,black,transparent 74%)}
+main{width:min(860px,calc(100% - 28px));margin:0 auto;padding:22px 0 40px;position:relative}
+.hero{text-align:center;margin-bottom:22px}
+.brand-logo{display:block;width:min(176px,44vw);height:auto;margin:0 auto 10px;object-fit:contain;image-rendering:auto;filter:none;transform:translateZ(0);backface-visibility:hidden}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 13px;border-radius:999px;background:#070a10;border:1px solid #202a3b;color:#bcc5d4;font-size:12px;font-weight:750;letter-spacing:.08em}
+.badge:before{content:"⚡";color:#7d4dff}
+.hero h1{font-size:clamp(34px,7vw,64px);line-height:1.05;margin:18px 0 0;letter-spacing:-.05em;font-weight:850}
+.hero h1 span{background:linear-gradient(90deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+.card{position:relative;background:linear-gradient(180deg,rgba(12,17,27,.96),rgba(6,9,15,.96));border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--glow),0 22px 70px rgba(0,0,0,.28);overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(0,184,255,.7),transparent 28%,transparent 68%,rgba(141,40,255,.75));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.8}
+.label{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:13px;font-weight:800;color:#dce4f1}
+.type{color:#bfc8ff;background:rgba(102,79,255,.13);border:1px solid rgba(135,92,255,.25);padding:6px 10px;border-radius:999px}
+textarea{width:100%;min-height:168px;resize:vertical;border:1px solid #1b2639;border-radius:16px;padding:18px;color:#fff;font:inherit;font-size:17px;line-height:1.7;outline:none;background:#05080e;transition:.2s;box-shadow:inset 0 0 0 1px rgba(255,255,255,.01)}
+textarea::placeholder{color:#596476}
+textarea:focus{border-color:#00aaff;box-shadow:0 0 0 3px rgba(0,170,255,.08),0 0 30px rgba(108,42,255,.09)}
+.hint,.examples,.privacy{display:none}
+.qrside{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 20px 22px}
+.qrwrap{width:272px;height:272px;background:#fff;border-radius:22px;display:grid;place-items:center;position:relative;overflow:visible;box-shadow:0 0 0 1px rgba(255,255,255,.16),0 0 32px rgba(0,184,255,.18),0 0 42px rgba(141,40,255,.10)}
+.qrwrap:before,.qrwrap:after{content:"";position:absolute;width:52px;height:52px;pointer-events:none}
+.qrwrap:before{left:-14px;top:-14px;border-left:4px solid var(--blue);border-top:4px solid var(--blue);border-radius:9px 0 0 0;filter:drop-shadow(0 0 7px var(--blue))}
+.qrwrap:after{right:-14px;bottom:-14px;border-right:4px solid var(--purple);border-bottom:4px solid var(--purple);border-radius:0 0 9px 0;filter:drop-shadow(0 0 7px var(--purple))}
+.placeholder{text-align:center;color:#667085;padding:30px;font-size:14px}
+.placeholder b{display:block;color:#111827;font-size:34px;margin-bottom:8px}
+.qrcode img{display:block!important;width:232px!important;height:232px!important;object-fit:contain;-webkit-touch-callout:default;user-select:auto}
+.qrcode{cursor:zoom-in}
+.savehint{margin-top:18px;color:var(--muted);font-size:13px;font-weight:700;text-align:center}
+.actions{display:grid;grid-template-columns:1fr;gap:10px;width:min(280px,100%);margin-top:14px}
+.btn{border:1px solid #25334a;border-radius:14px;padding:13px 14px;font-weight:850;font-size:14px;cursor:pointer}
+.primary{background:linear-gradient(90deg,#125cff,#7a2cff);color:#fff;box-shadow:0 10px 30px rgba(74,62,255,.23)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.status{min-height:20px;margin-top:10px;font-size:12px;color:var(--ok);font-weight:800;text-align:center}
+.detected{margin-top:6px;color:#9fa9bb;font-size:12px;font-weight:800}
+.footer{text-align:center;margin-top:20px;color:#586276;font-size:11px;letter-spacing:.18em}
+.modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.modal.open{display:flex}
+.modalbox{width:min(92vw,560px);background:#070a10;border:1px solid #1d2840;border-radius:24px;padding:20px;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.6),0 0 40px rgba(57,42,255,.18)}
+.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:900}
+.close{border:1px solid #263148;background:#0d121d;color:#fff;width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer}
+.modalimg{width:min(78vw,460px);height:auto;max-height:65vh;object-fit:contain;background:#fff;border-radius:18px;padding:12px;-webkit-touch-callout:default;user-select:auto}
+.modalnote{margin:12px 0 0;color:var(--muted);font-size:13px;font-weight:700}
+@media(max-width:760px){main{padding-top:22px}.brand-logo{width:min(96px,25vw)}.hero{margin-bottom:20px}.card{border-radius:19px;padding:16px}textarea{min-height:165px;font-size:16px}.qrwrap{width:246px;height:246px}.qrcode img{width:210px!important;height:210px!important}}
+
 </style>
 </head>
+
 <body>
 <main>
   <section class="hero">
-    <span class="badge">⚡ ZERO CLICK TOOL</span>
-    <h1>貼った瞬間、QR。</h1>
-    <p>生成ボタンなし。内容を自動判定して、その場でQRコードにします。</p>
+    <img class="brand-logo" src="taovertex-logo.png" alt="TAOVERTEX">
+    <span class="badge">ZERO CLICK TOOL</span>
+    <h1>貼った瞬間、<span>QR。</span></h1>
   </section>
 
   <section class="grid">
     <div class="card">
-      <div class="label"><span>QRにしたい内容</span><span id="type" class="type">待機中</span></div>
-      <textarea id="input" autofocus placeholder="ここにURL・電話番号・メールアドレス・文章を貼り付けてください"></textarea>
-      <div class="hint">URL、メール、電話番号、Wi‑Fi設定、通常テキストを自動判定します。入力内容は外部へ送信しません。</div>
-      <div class="examples">
-        <button class="chip" data-v="https://example.com">URL例</button>
-        <button class="chip" data-v="hello@example.com">メール例</button>
-        <button class="chip" data-v="090-1234-5678">電話例</button>
-        <button class="chip" data-v="WIFI:T:WPA;S:MyWiFi;P:password123;;">Wi‑Fi例</button>
-      </div>
+      <div class="label"><span>ここに貼り付けるだけ</span><span id="type" class="type">待機中</span></div>
+      <textarea id="input" autofocus placeholder="URL・メール・電話番号・Wi‑Fi・テキスト"></textarea>
     </div>
 
     <div class="card qrside">
@@ -46,7 +76,7 @@ textarea{width:100%;min-height:250px;resize:vertical;border:1.5px solid var(--li
         <div id="placeholder" class="placeholder"><b>⌘V</b>貼り付けるだけ</div>
         <div id="qrcode" class="qrcode"></div>
       </div>
-      <div id="savehint" class="savehint">QRをタップすると大きく表示できます</div>
+      <div id="savehint" class="savehint">タップして拡大／長押しで保存</div>
       <div class="actions">
         <button id="share" class="btn primary" disabled>共有する</button>
       </div>
@@ -54,7 +84,7 @@ textarea{width:100%;min-height:250px;resize:vertical;border:1.5px solid var(--li
       <div id="status" class="status"></div>
     </div>
   </section>
-  <div class="privacy">ブラウザ内だけで処理されます。外部通信・API・インターネット接続は不要です。</div>
+  <div class="footer">© TAOVERTEX</div>
 </main>
 <div id="modal" class="modal" aria-hidden="true">
   <div class="modalbox" role="dialog" aria-modal="true" aria-label="QRコード拡大表示">
